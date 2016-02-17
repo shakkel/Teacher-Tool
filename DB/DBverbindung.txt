@@ -1,0 +1,25 @@
+abmeldung 					+ad_id 			-ustd_id -skz_id
+fachdaten 					+f_kuerzel
+ferien 						+fe_start 
+geschlecht					+g_id
+hausaufgabe					+ha_id			-lf_id -kz_id -ha_frist
+hausaufgabe_schueler		+ha_id 		+-skz_id
+klassendaten				+k_kuerzel
+klasse_zeitphase			+kz_id			-k_kuerzel -zph_id
+konfession					+konf_id
+kurs						+ku_id			-zph_id -lf_id
+lehrerdaten					+l_id			-l_kuerzel -o_id
+lehrer_faecher				+lf_id			-f_kuerzel -l_id
+notizen						+no_id			-no_typ -no_fremd_id
+ort							+o_id
+raumdaten					+r_kuerzel
+schuelerdaten				+s_id			-s_nname -s_vname -s_gebdat -s_geb_ort -st_id -g_id -konf_id
+schueler_klasse_zph			+skz_id			-kz_id -s_id
+schueler_kurs				+sku_id			-s_id -ku_id
+sil_import2  ...
+staat						+st_id
+unterricht					+u_id			-kz_id -ku_id  -lf_id -r_kuerzel -u_doppelstunde
+unterrichtsstunde			+ustd_id		-lf_id -kz_id -ku_id -ustd_datum -u_stunde -u_doppelstunde -ustd_vertretungslehrer
+user 						+user_id
+versaeumnis					+v_id			-ustd_id -skz_id -v_entschuldigt
+zeitphase					+zph_id
