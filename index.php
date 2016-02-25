@@ -28,45 +28,40 @@ require 'inc/mysql.php';
 <?php
 if($_SESSION)
 {
-	echo '<script type="text/javascript">$(document).ready(function() {hidelogin();});</script>';
-	echo '<script type="text/javascript">$(document).ready(function() {loadKlassen();});</script>';
+	echo '<script type="text/javascript">$(document).ready(function() {hidelogin()});</script>';
+	
+	echo '<script type="text/javascript">$(document).ready(function() {loadKlassen();setTimeout(function(){ loadUnterricht('.$_SESSION["__l_id"].'); }, 100);});</script>';
+	
+	echo '<div style="display: none;" id="l_id">'.$_SESSION["__l_id"].'</div>';
 }
 ?>
 
 <nav id="navbar" class="navbar navbar-inverse">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="#">Teacher Tool</a>
+			<a class="navbar-brand" href="#home">Teacher Tool</a>
 		</div>
 		<ul class="nav navbar-nav">
-			<li class="dropdown">
+			<li id="klassen" class="dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Klassen<span class="caret"></span></a>
 				<ul id="1drop" class="dropdown-menu">
-					<li id="1drop1-l1"><a id="1drop1-a" href="#">Dropdown 1-1</a></li>
-					<li id="1drop2-li"><a id="1drop2-a" href="#">Dropdown 1-2</a></li>
-					<li id="1drop3-li"><a id="1drop3-a" href="#">Dropdown 1-3</a></li>
-					<li id="1drop4-l1"><a id="1drop4-a" href="#">Dropdown 1-4</a></li>
-					<li id="1drop5-li"><a id="1drop5-a" href="#">Dropdown 1-5</a></li>
-					<li id="1drop6-li"><a id="1drop6-a" href="#">Dropdown 1-6</a></li>
-					<li id="1drop7-l1"><a id="1drop7-a" href="#">Dropdown 1-7</a></li>
-					<li id="1drop8-li"><a id="1drop8-a" href="#">Dropdown 1-8</a></li>
-					<li id="1drop9-li"><a id="1drop9-a" href="#">Dropdown 1-9</a></li>
 				</ul>
 			</li>
-	
-			<li id="btn1-li"><a id="btn1-a" href="#">Formulare anpassen</a></li>
-			<li id="btn2-li"><a id="btn2-a" href="#">Schüler</a></li>
-			<li id="btn3-li"><a id="btn3-a" href="#">Anwesenheit</a></li>
-			<li id="btn4-li"><a id="btn4-a" href="#">Formulare</a></li>
-			<li id="btn5-li"><a id="btn5-a" href="#">Hausaufgaben</a></li>
-			<li id="btn6-li"><a id="btn6-a" href="#">Sonstiges</a></li>
+			<li id="btn-schueler-li"><a id="btn-schueler-a" href="#">Schüler</a></li>
+			<li id="btn-anwesenheit-li"><a id="btn-anwesenheit-a" href="#">Anwesenheit</a></li>
+			<li id="btn-formulare-li"><a id="btn-formulare-a" href="#">Formulare</a></li>
+			<li id="btn-hausaufgaben-li"><a id="btn-hausaufgaben-a" href="#">Hausaufgaben</a></li>
+			<li id="btn-sonstieges-li"><a id="btn-sonstieges-a" href="#">Sonstiges</a></li>
+			<li id="btn-raumverwaltung-li"><a id="btn-raumverwaltung-a" href="#">Raumverwaltung</a></li>
+			<li id="btn-lehrerfach-li"><a id="btn-lehrerfach-a" href="#">Lehrer Fächer</a></li>
+			<li id="btn-stundenplanverwaltung-li"><a id="btn-stundenplanverwaltung-a" href="#">Stundenplanverwaltung</a></li>
 			
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 		
 		
 			<li class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-option-horizontal"></span> <?php echo strtoupper($_SESSION["__user"]); ?> <span class="caret"></span></a>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-option-horizontal"></span> <?php echo strtoupper($_SESSION["__user"] ."(".$_SESSION["__l_id"].")"); ?> <span class="caret"></span></a>
 				<ul id="2drop" class="dropdown-menu">
 					<li id="2drop1-l1"><a id="1drop1-a" href="#">Dropdown 2-1</a></li>
 					<li id="2drop1-l1"><a id="1drop1-a" href="#">Dropdown 2-1</a></li>
@@ -108,8 +103,6 @@ if($_SESSION)
 </div>
 
 <div id="page" class="container">
-  <h1>Willkommen</h1>
-  <p>hier k&ouml;nnte ihre Werbung Stehen</p>
 </div>
 
 </body>
