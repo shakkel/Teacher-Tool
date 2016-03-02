@@ -1,3 +1,3 @@
-# Teacher-Tool
-Teacher Tool ist eine Webseite die für Lehrer erstellt wird
+# TAS
+Teachers Assistant Software is a Software to help Teachers
 
